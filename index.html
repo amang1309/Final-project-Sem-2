@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gada Electronics | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Top-quality gadgets at unbeatable prices</h1>
+          <p>Discover phones, laptops, TVs, and accessories trusted by thousands of customers.</p>
+          <a href="product.html" class="btn">Shop Now</a>
+        </div>
+        <!-- Filled in by home.js with the first product in our catalog -->
+        <div class="card" id="hero-product"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Featured Categories</h2>
+      <!-- Filled in by home.js -->
+      <div class="grid" id="featured-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container wrap">&copy; 2025 Gada Electronics. All rights reserved.</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- Shared scripts (order matters: products/storage before header, header before page script) -->
+  <script src="js/products.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

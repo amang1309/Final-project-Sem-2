@@ -1,0 +1,229 @@
+/* ============================================================
+   GADA ELECTRONICS — shared stylesheet
+   One file, used by every page, so the whole site looks the same.
+   ============================================================ */
+
+:root {
+  --brand: #0f6efb;
+  --brand-dark: #0b54c4;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --danger: #e0383a;
+  --success: #1a7f37;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--brand);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+.nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.nav a {
+  margin: 0;
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.nav a:hover { background: var(--bg); }
+.nav a.active { color: var(--brand); font-weight: 600; background: #eaf2ff; }
+
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: 2px;
+}
+
+.account-pill {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account-pill strong { color: var(--text); }
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--brand);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ---------- Generic layout pieces ---------- */
+.hero { padding: 40px 0 20px; }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.img-placeholder {
+  height: 160px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: #fafafa;
+  overflow: hidden;
+}
+.img-placeholder img { object-fit: contain; max-width: 100%; max-height: 100%; }
+
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn:hover { background: var(--brand-dark); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn.secondary { background: #fff; color: var(--brand); border: 1px solid var(--brand); }
+.btn.danger { background: var(--danger); }
+.btn.danger:hover { background: #b8302f; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.section-title { margin: 20px 0 10px; font-size: 1.25rem; }
+.muted { color: var(--muted); }
+.price { font-weight: 700; }
+
+main.container { padding-bottom: 40px; min-height: 50vh; }
+
+.footer { margin-top: 40px; border-top: 1px solid var(--border); background: #fff; }
+.footer .wrap { padding: 18px 0; color: var(--muted); text-align: center; }
+
+/* ---------- Products page ---------- */
+.product-card { display: flex; flex-direction: column; gap: 8px; }
+.product-card .price { font-size: 1.05rem; color: var(--brand-dark); }
+.product-card .btn { margin-top: auto; }
+
+/* ---------- Cart page ---------- */
+table { width: 100%; border-collapse: collapse; background: var(--card); }
+th, td { border-bottom: 1px solid var(--border); padding: 12px; text-align: left; }
+th { background: #f9fafb; }
+.qty-input {
+  width: 56px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+}
+.remove-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 0.85rem; }
+.empty-state { text-align: center; padding: 40px 0; color: var(--muted); }
+
+/* ---------- Forms (sign in / sign up) ---------- */
+form.auth-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  max-width: 420px;
+}
+label { display: block; font-weight: 600; margin: 12px 0 6px; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+.form-actions { margin-top: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.field-error { color: var(--danger); font-size: 0.85rem; margin-top: 4px; min-height: 1.1em; }
+.form-message {
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  display: none;
+}
+.form-message.error { display: block; background: #fdecea; color: var(--danger); }
+.form-message.success { display: block; background: #e9f7ef; color: var(--success); }
+
+/* ---------- Toast (small "Added to cart" popup) ---------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+
+@media (max-width: 820px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  table, thead, tbody, th, td, tr { display: block; }
+  thead { display: none; }
+  td { border-bottom: none; padding: 6px 0; }
+  tr { padding: 12px; border-bottom: 1px solid var(--border); }
+  td::before { content: attr(data-label); font-weight: 600; display: block; font-size: 0.78rem; color: var(--muted); }
+}
